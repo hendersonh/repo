@@ -6,7 +6,7 @@ node {
   }
   
   stage('Build image') {
-    app = docker.build("nginx")
+    app = docker.build("hoodh/nginx")
   }
   
   stage('Test image') {
