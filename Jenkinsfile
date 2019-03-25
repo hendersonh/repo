@@ -6,7 +6,7 @@ node {
   }
   
   stage('Build image') {
-    app = docker.build("hoodh/nginx")
+    app = docker.build("192.168.58.44/default-project/nginx")
   }
   
   stage('Test image') {
@@ -16,7 +16,7 @@ node {
   }
   
   stage('Push image') {
-    docker.withRegistry('https://registry.hub.docker.com', 'DOCKER_HUB_REG') {
+    docker.withRegistry('https://192.168.58.44', 'LOCAL_HUB_REG') {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
       }
