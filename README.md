@@ -1,2 +1,2 @@
 # repo
-Main repository
+A repository for learning CID with Docker and Jenkins. 
