@@ -6,7 +6,7 @@ node {
   }
   
   stage('Build image') {
-    app = docker.build("192.168.58.44/default-project/nginx")
+    app = docker.build("192.168.58.44/default-project/nginx-server")
   }
   
   stage('Test image') {
