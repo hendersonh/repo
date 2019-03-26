@@ -1,3 +1,0 @@
-This is a new test file
-forcing a commit now.
-This is my last line 
