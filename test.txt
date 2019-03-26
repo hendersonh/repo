@@ -1,7 +1,2 @@
 This is a new test file
-<<<<<<< HEAD
-Forcing a commit now
-
-=======
 forcing a commit now.
->>>>>>> 398a7a42224f249ecf6e55ed0171ab83a948162a
