@@ -1,25 +1,26 @@
-node {
-  def app
-  
-  stage('Clone repository') {
-    checkout scm
-  }
-  
-  stage('Build image') {
-    app = docker.build("192.168.58.44/default-project/nginx-server")
-  }
-  
-  stage('Test image') {
-    app.inside {
-      echo "Tests passed"
+
+pipeline {
+    agent none
+    stages {
+        stage('Back-end') {
+            agent {
+                docker { image 'maven:3-alpine' }
+            }
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Front-end') {
+            agent {
+                docker { image 'node:7-alpine' }
+            }
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-  }
-  
-  stage('Push image') {
-    docker.withRegistry('https://192.168.58.44', 'LOCAL_HUB_REG') {
-      app.push("${env.BUILD_NUMBER}")
-      app.push("latest")
-      }
-        echo "Trying to Push Doker Build to Dockerhub"
-  }
 }
+
+
+
+
