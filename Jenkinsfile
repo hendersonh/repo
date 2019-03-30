@@ -26,6 +26,14 @@ pipeline {
                 sh 'uname -a'
             }
         }
+        stage('back-end-nginx -no 2') {
+            agent {
+                docker { image 'nginx' }
+            }
+            steps {
+                sh 'uname -a'
+            }
+        }
     }
 }
 
