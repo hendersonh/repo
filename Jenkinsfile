@@ -18,6 +18,14 @@ pipeline {
                 sh 'node --version'
             }
         }
+        stage('back-end-nginx') {
+            agent {
+                docker { image 'nginx' }
+            }
+            steps {
+                sh 'uname -a'
+            }
+        }
     }
 }
 
