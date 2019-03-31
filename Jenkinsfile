@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'svn --version'
+                sh 'echo "Henderson Hood"'
             }
         }
    }
