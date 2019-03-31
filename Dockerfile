@@ -1,7 +1,5 @@
-FROM nginx
 
-HEALTHCHECK  CMD curl -fail http://127.0.0.1 || exit 1
+FROM node:7-alpine
 
-EXPOSE 80
-
+RUN apk add -U subversion
            
