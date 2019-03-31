@@ -4,4 +4,4 @@ For projects which require a more customized execution environment, Pipeline als
 The docker file instructs to pull an off the shelf node image, then, install the subversion package on it. Thus creating
 a new customized image. Jenkins use the dockerfile in the SCM to build the imagine as described in the Jenkinfile in the SCM.  
 
-hendy
+Henderson Hood
